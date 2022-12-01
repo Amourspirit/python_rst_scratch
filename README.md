@@ -4,7 +4,58 @@ Simple enough! A project for editing rst files in VS Code
 
 ## Install
 
-After cloning onto your computer run `poetry install`.
+### Virtual Environment
+
+It is assumed <https://github.com/Amourspirit/python_rst_scratch> has been cloned or unzipped to a folder.
+
+[Poetry](https://python-poetry.org/) is required to install this project.
+
+### Linux
+
+```sh
+$ python -m venv ./.venv
+```
+Activate virtual environment.
+
+```sh
+source ./.venv/bin/activate
+```
+
+Install requirements using Poetry.
+
+```sh
+(.venv) $ poetry install
+```
+
+Start VS Code
+
+```sh
+code .
+```
+
+### Windows
+
+Start by using terminal to create a `.venv` environment in the projects root folder
+
+```ps
+PS C:\python_rst_scratch> python -m venv .\.venv
+```
+
+Activate Virtual environment.
+
+```ps
+PS C:\python_rst_scratch> .\.venv\Scripts\Activate
+```
+
+Install requirements using Poetry.
+
+```ps
+(.venv) PS C:\python_rst_scratch> poetry install
+```
+
+```ps
+code .
+```
 
 ## Quick start rst edit
 
