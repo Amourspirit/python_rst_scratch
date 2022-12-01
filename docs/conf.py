@@ -150,8 +150,16 @@ rst_prolog_lst = [
 # add extra roles for custom theme colors.
 # unlike the colors style_custom.css, these colors can be change by
 # changing colors css vars that start with -t-color-
-with open("roles/theme_color_roles.txt", "r") as file:
-    rst_prolog = file.read()
+rst_prolog = ""
+if html_theme == "sphinx_rtd_theme":
+    with open("roles/theme_color_roles.txt", "r") as file:
+        rst_prolog += file.read()
+        rst_prolog += "\n"
+
+with open("roles/custom_roles.txt", "r") as file:
+    rst_prolog += file.read()
+    rst_prolog += "\n"
+
 
 rst_prolog += "\n" + "\n".join(rst_prolog_lst)
 
