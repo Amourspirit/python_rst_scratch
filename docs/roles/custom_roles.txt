@@ -7,6 +7,9 @@
 .. role:: strike_gray
 .. role:: bg_black
 .. role:: bg_gray
+.. role:: bg_grey
+.. role:: bg_light_gray
+.. role:: bg_light_grey
 .. role:: bg_silver
 .. role:: bg_white
 .. role:: bg_maroon
