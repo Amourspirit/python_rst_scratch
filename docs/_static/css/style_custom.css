@@ -79,3 +79,111 @@
     color: purple;
 }
 /* End Colors in s5defs.txt */
+
+/* Custom background colors */
+.bg-black {
+    background-color: black;
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+.bg-silver {
+    background-color: silver;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-maroon {
+    background-color: maroon;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-magenta {
+    background-color: magenta;
+}
+
+.bg-fuchsia {
+    background-color: fuchsia;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-lime {
+    background-color: lime;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-olive {
+    background-color: olive;
+}
+
+.bg-teal {
+    background-color: teal;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}
+
+.bg-aqua {
+    background-color: aqua;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-navy {
+    background-color: navy;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+/* End Custom background colors */
+
+.strike {
+    text-decoration: line-through;
+}
+
+.strike-red {
+    text-decoration: line-through;
+    color: red;
+}
+.strike-yellow {
+    text-decoration: line-through;
+    color: yellow;
+}
+.strike-green {
+    text-decoration: line-through;
+    color: green;
+}
+.strike-blue {
+    text-decoration: line-through;
+    color: blue;
+}
+.strike-gray,
+.strike-grey {
+    text-decoration: line-through;
+    color: grey;
+}
