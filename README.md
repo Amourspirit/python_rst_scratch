@@ -67,3 +67,19 @@ Optionally just edit `docs/scratch/scratch.rst`
 ## Live Preview
 
 For live preview install extension [reStructuredText Language Support for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext)
+
+## HTML Server (localhost)
+
+A localhost html server can be started if needed.
+
+Defaults to port 8000
+
+```sh
+python ./dev_cmds/run_http.py
+```
+
+Optionally a port can be passed to script.
+
+```sh
+python ./dev_cmds/run_http.py 8081
+```
