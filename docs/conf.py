@@ -23,8 +23,8 @@ release = '0.1.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    "sphinx_rtd_theme",
-    "sphinx_rtd_dark_mode",
+    # "sphinx_rtd_theme",
+    # "sphinx_rtd_dark_mode",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx_toolbox.collapse",
@@ -86,8 +86,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# html_theme = 'alabaster'
-html_theme = "sphinx_rtd_theme"
+html_theme = 'alabaster'
+# html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

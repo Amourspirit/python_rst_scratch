@@ -463,8 +463,13 @@ Writing Spreadsheet Documents
 
 |odev|_ also provides ways of writing data, meaning that your programs can create and edit spreadsheet files. With Python, it’s simple to create spreadsheets with thousands of rows of data.
 
-A :red:`LO instance` :green:`loader` is required before python can interact with the objects.
-When the python program is finished it is important to close any document or LO instances or they will continue to run in the computer. This initialisation and finalisation code is required even if it is not shown in the examples.
+A :strike:`LO instance` :green:`loader` is required before python can interact with the objects.
+When the python program is finished it is important to close any document or :strike:`LO` :green:`Office` instances or they will continue to run in the computer.
+This initialisation and finalisation code is required even if it is not shown in the examples.
+
+.. cssclass:: green, bg_gray
+
+   I think showind command line usage is limiting and will lead to confusion.
 
 >>> from ooodev.utils.lo import Lo
 >>> loader = Lo.load_office(Lo.ConnectSocket(headless=True))
