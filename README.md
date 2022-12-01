@@ -15,6 +15,7 @@ It is assumed <https://github.com/Amourspirit/python_rst_scratch> has been clone
 ```sh
 $ python -m venv ./.venv
 ```
+
 Activate virtual environment.
 
 ```sh
