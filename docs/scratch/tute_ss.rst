@@ -463,13 +463,13 @@ Writing Spreadsheet Documents
 
 |odev|_ also provides ways of writing data, meaning that your programs can create and edit spreadsheet files. With Python, it’s simple to create spreadsheets with thousands of rows of data.
 
-A :strike:`LO instance` :green:`loader` is required before python can interact with the objects.
+A :strike:`LO instance` :blue:`loader` is required before python can interact with the objects.
 When the python program is finished it is important to close any document or :strike:`LO` :green:`Office` instances or they will continue to run in the computer.
 This initialisation and finalisation code is required even if it is not shown in the examples.
 
-.. cssclass:: green, bg_gray
+.. cssclass:: blue, bg_light_gray
 
-   I think showind command line usage is limiting and will lead to confusion.
+   I think showing command line usage is limiting and will lead to confusion.
 
 >>> from ooodev.utils.lo import Lo
 >>> loader = Lo.load_office(Lo.ConnectSocket(headless=True))
@@ -482,10 +482,67 @@ Closing Office
 Office has already been requested to terminate
 True
 
+.. cssclass:: bg_light_gray, blue
+
+   A Better alternative might be.
+
+   .. code-block:: python
+
+      def main() -> int:
+         loader = Lo.load_office(Lo.ConnectSocket())
+         try:
+            doc = Calc.create_doc(loader=loader)
+            sheet = Calc.get_sheet(doc=doc, index=0)
+            # do some work
+            Lo.close_doc(doc=doc)
+            Lo.close_office()
+         except Exception:
+            Lo.close_office()
+            raise
+         return 0
+
+
+      if __name__ == "__main__":
+         raise SystemExit(main())
+
+   Output
+
+      ::
+
+         Loading Office...
+         Closing the document
+         Closing Office
+
+.. cssclass:: bg_light_gray, blue
+
+   Better still:
+
+   When there is no GUI being or when just need to run an Office process and close then
+   ``Lo.Loader`` context manager is a much better option. When the code block inside
+   ``with Lo.Loader ...`` runs office will automatically be closed, even if there is an error.
+
+   .. code-block:: python
+
+      def main() -> int:
+         with Lo.Loader(Lo.ConnectSocket(headless=True)) as loader:
+            doc = Calc.create_doc(loader=loader)
+            sheet = Calc.get_sheet(doc=doc, index=0)
+            # do some work
+            Lo.close_doc(doc=doc)
+         return 0
+
+
+      if __name__ == "__main__":
+         raise SystemExit(main())
+   
+
+
 Creating and Saving Spreadsheet Documents
 -----------------------------------------
 
-Start a lo instance and use the Calc create_doc class to create a new, blank Workbook object. Enter the following into the interactive shell:
+.. cssclass:: strike
+
+   Start a lo instance and use the Calc create_doc class to create a new, blank Workbook object. Enter the following into the interactive shell:
 
 >>> from ooodev.utils.lo import Lo
 >>> loader = Lo.load_office(Lo.ConnectSocket(headless=True))
@@ -506,6 +563,42 @@ True
 >>> Lo.close_doc(wb)
 >>> lo.close_office()
 
+.. cssclass:: bg_light_gray, blue
+
+   Updated Example
+
+   Using the Lo Loader start/connect to Office.
+   Using ``Calc.create_doc()`` create a new blank Workbook object.
+   Change the workbook sheet name and output the results.
+
+   .. code-block:: python
+
+      from ooodev.utils.lo import Lo
+      from ooodev.office.calc import Calc
+
+      def main() -> int:
+         with Lo.Loader(Lo.ConnectSocket(headless=True)) as loader:
+            wb = Calc.create_doc(loader=loader)
+            ws = Calc.get_sheet(doc=wb, index=0)
+            print(Calc.get_sheet_name(ws))
+            Calc.set_sheet_name(ws, 'Spam Bacon Eggs Sheet')
+            print(Calc.get_sheet_name(ws))
+            print(Calc.get_sheet_names(wb))
+            Calc.save_doc(wb, "foo.ods")
+            Lo.close_doc(doc=doc)
+         return 0
+
+      if __name__ == "__main__":
+         raise SystemExit(main())
+
+   Output:
+
+   ::
+
+      'Sheet1'
+      'Spam Bacon Eggs Sheet'
+      ('Spam Bacon Eggs Sheet',)
+
 The workbook will start off with a single sheet named Sheet. **You can change the name of the sheet by storing a new string in its title attribute.**
 
 Any time you modify the Workbook object or its sheets and cells, the spreadsheet file will not be saved until you call the save_doc() workbook method. Enter the following into the interactive shell (with example.xlsx in the current working directory):
@@ -523,6 +616,27 @@ True
 >>> Lo.close_doc(wb)
 >>> Lo.close_office()
 
+.. cssclass:: bg_light_gray, blue
+
+   Updated Example
+
+   .. code-block:: python
+
+      from ooodev.utils.lo import Lo
+      from ooodev.office.calc import Calc
+
+      def main() -> int:
+         with Lo.Loader(Lo.ConnectSocket(headless=True)) as loader:
+            wb = Calc.open_doc('example.xlsx', loader)
+            ws = Calc.get_sheet(doc=wb, index=0)
+            Calc.set_sheet_name(ws, 'Spam Spam Spam')
+            Calc.save_doc(wb, "example_copy.xlsx")
+            Lo.close_doc(doc=doc)
+         return 0
+
+      if __name__ == "__main__":
+         raise SystemExit(main())
+
 Here, we change the name of our sheet. To save our changes, we pass a filename as a string to the save_doc() method. Passing a different filename than the original, such as 'example_copy.xlsx', saves the changes to a copy of the spreadsheet.
 
 Whenever you edit a spreadsheet you’ve loaded from a file, you should always save the new, edited spreadsheet to a different filename than the original. That way, you’ll still have the original spreadsheet file to work with in case a bug in your code caused the new, saved file to have incorrect or corrupt data.
@@ -530,7 +644,7 @@ Whenever you edit a spreadsheet you’ve loaded from a file, you should always s
 Creating and Removing Sheets
 ----------------------------
 
-Sheets can be added to and removed from a workbook with the insert_sheet() method and del operator. Enter the following into the interactive shell:
+Sheets can be added to and removed from a workbook with the insert_sheet() and :blue:`remove_sheet()` methods :strike:`and del operator`. Enter the following into the interactive shell:
 
 >>> from ooodev.utils.lo import Lo
 >>> loader = Lo.load_office(Lo.ConnectSocket(headless=True))
@@ -551,9 +665,49 @@ Creating Office document scalc
 >>> Calc.get_sheet_names(wb)
 ('First Sheet', 'Sheet1', 'Middle Sheet', 'Sheet2')
 
+.. cssclass:: bg_light_gray, blue
+
+   Updated Example
+
+   .. code-block:: python
+
+      from ooodev.utils.lo import Lo
+      from ooodev.office.calc import Calc
+
+      def main() -> int:
+         with Lo.Loader(Lo.ConnectSocket(headless=True)) as loader:
+            wb = Calc.create_doc(loader=loader)
+            ws = Calc.get_sheet(doc=wb, index=0)
+            print(Calc.get_sheet_names(wb))
+
+            Calc.insert_sheet(wb, 'Sheet2', 1)
+            print(Calc.get_sheet_names(wb))
+
+            Calc.insert_sheet(wb, 'First Sheet', 0)
+            print(Calc.get_sheet_names(wb))
+
+            Calc.insert_sheet(wb, 'Middle Sheet', 2)
+            print(Calc.get_sheet_names(wb))
+            Lo.close_doc(doc)
+         return 0
+
+      if __name__ == "__main__":
+         raise SystemExit(main())
+
+   Output:
+
+   ::
+
+      ('Sheet1',)
+      ('Sheet1', 'Sheet2')
+      ('First Sheet', 'Sheet1', 'Sheet2')
+      ('First Sheet', 'Sheet1', 'Middle Sheet', 'Sheet2')
+
 The insert_sheet() method returns a new Worksheet object named SheetX, **which by default is set to be the last sheet in the workbook. Optionally, the index and name of the new sheet can be specified with the index and title keyword arguments.**
 
-Continue the previous example by entering the following:
+.. cssclass:: strike
+
+   Continue the previous example by entering the following:
 
 >>> Calc.get_sheet_names(wb)
 ('First Sheet', 'Sheet1', 'Middle Sheet', 'Sheet2')
@@ -567,7 +721,33 @@ True
 >>> Lo.close_doc(wb)
 >>> Lo.close_office()
 
-You can use the remove_sheet method to remove a sheet from a workbook, **just like you can use it to delete a key-value pair from a dictionary.**
+.. cssclass:: bg_light_grey, blue
+
+   Updated Example
+
+   If we want to remove sheets then we would use ``remove_sheet()`` method.
+
+   The previous code would now include:
+
+   .. code-block:: python
+   
+      # in main() add
+      print(Calc.get_sheet_names(wb))
+      Calc.remove_sheet(wb, 'Middle Sheet')
+      Calc.remove_sheet(wb, 'Sheet2')
+      print(Calc.get_sheet_names(wb))
+      #  Lo.close_doc(doc)
+
+   Output:
+
+   ::
+
+      ('First Sheet', 'Sheet1', 'Middle Sheet', 'Sheet2')
+      ('First Sheet', 'Sheet1')
+
+.. cssclass:: strike
+
+   You can use the remove_sheet method to remove a sheet from a workbook, **just like you can use it to delete a key-value pair from a dictionary.**
 
 Remember to call the save_doc() method to save the changes after adding sheets to or removing sheets from the workbook.
 
@@ -591,7 +771,41 @@ Creating Office document scalc
 >>> Lo.close_doc(wb)
 >>> Lo.close_office()
 
-If you have the cell’s coordinate as a string, you can use it just like a dictionary key on the Worksheet object to specify which cell to write to.
+.. cssclass:: bg_light_gray, blue
+
+   Updated Example
+
+   .. code-block:: python
+
+      from ooodev.utils.lo import Lo
+      from ooodev.office.calc import Calc
+
+      def main() -> int:
+         with Lo.Loader(Lo.ConnectSocket(headless=True)) as loader:
+            wb = Calc.create_doc(loader=loader)
+            ws = Calc.get_sheet(doc=wb, index=0)
+            Calc.set_val('Hello, world!', ws, 'A1')
+            print(Calc.get_string(ws, 'A1'))
+            Lo.close_doc(doc)
+         return 0
+
+      if __name__ == "__main__":
+         raise SystemExit(main())
+
+   Output:
+
+   ::
+
+      'Hello, world!'
+
+
+.. cssclass:: strike
+
+   If you have the cell’s coordinate as a string, you can use it just like a dictionary key on the Worksheet object to specify which cell to write to.
+
+.. cssclass:: blue
+
+   If you have the cell’s coordinate as a string, it is simple to set it value using ``set_val()``.
 
 Project: Updating a Spreadsheet
 ===============================
