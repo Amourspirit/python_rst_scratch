@@ -16,6 +16,7 @@ Colored Background
 ------------------
 
 :bg_red:`Background Red`, :bg_green:`Background Green`, :bg_blue:`Background blue`, :bg_yellow:`Background yelllow`
+:bg_light_gray:`Background Light Grey`
 
 Colored Strike Through
 ----------------------

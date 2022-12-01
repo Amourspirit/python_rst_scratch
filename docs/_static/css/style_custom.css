@@ -85,8 +85,14 @@
     background-color: black;
 }
 
+.bg-grey,
 .bg-gray {
     background-color: gray;
+}
+
+.bg-light-grey,
+.bg-light-gray {
+    background-color: lightgray;
 }
 
 .bg-silver {
