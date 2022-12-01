@@ -1,7 +1,4 @@
-scratch/
 tmp/
-_test/
-_test/*
 out/
 dist/
 *.log
