@@ -17,7 +17,7 @@ sys.path.insert(0, str(_ROOT_PATH))
 project = "RST Scratch"
 copyright = "2022-2023, Scratch Editor"
 author = "Scratch Editor"
-release = "0.1.0"
+release = "0.1.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
