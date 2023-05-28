@@ -4,4 +4,4 @@ sphinx-autodoc-typehints==1.23.0
 sphinx-toolbox==3.4.0
 sphinx_design==0.4.1
 typing_extensions==4.6.2
-sphinxcontrib-spelling==sphinxcontrib-spelling
+sphinxcontrib-spelling==8.0.0
