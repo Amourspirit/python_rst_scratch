@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import os
+# import os
 import sys
 from pathlib import Path
 
@@ -14,10 +14,10 @@ _DOCS_PATH = Path(__file__).parent
 _ROOT_PATH = _DOCS_PATH.parent
 sys.path.insert(0, str(_ROOT_PATH))
 
-project = 'RST Scratch'
-copyright = '2022, Scratch Editor'
-author = 'Scratch Editor'
-release = '0.1.0'
+project = "RST Scratch"
+copyright = "2022-2023, Scratch Editor"
+author = "Scratch Editor"
+release = "0.1.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -52,7 +52,6 @@ extensions = [
 
 
 def get_spell_dictionaries() -> list:
-
     p = _DOCS_PATH.absolute().resolve() / "internal" / "dict"
     dict_gen = p.glob("spelling_*.*")
     return [str(d) for d in dict_gen if d.is_file()]
@@ -70,17 +69,15 @@ spelling_exclude_patterns = [".venv/"]
 
 # spell checking;
 #   run sphinx-build -b spelling . _build
-#       this will checkfor any spelling and create folders with *.spelling files if there are errors.
-#       open each *.spelling file and find any spelling errors and fix them in corrsponding files.
+#       this will check for any spelling and create folders with *.spelling files if there are errors.
+#       open each *.spelling file and find any spelling errors and fix them in corresponding files.
 #
-# spelling_book.txt contains all spelling exceptions related to book in /docs/odev
 # spelling_code.txt contains all spelling exceptions related to python doc strings.
 
 # endregion spelling
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -163,7 +160,7 @@ with open("roles/custom_roles.txt", "r") as file:
 
 rst_prolog += "\n" + "\n".join(rst_prolog_lst)
 
-# set if figures can be referenced as numers. Defalut is False
+# set if figures can be referenced as numbers. Default is False
 numfig = True
 
 # set is todo's will show up.
@@ -171,11 +168,5 @@ numfig = True
 # https://www.sphinx-doc.org/en/master/usage/extensions/todo.html#module-sphinx.ext.todo
 todo_include_todos = False
 
-# region sphinx.ext.extlinks – Markup to shorten external links
 # https://documentation.help/Sphinx/extlinks.html
 # extlinks = {}
-
-# region intersphinx
-# intersphinx_mapping = {"odevgui": ("https://somedomain.com", None)}
-
-# endregion intersphinx
