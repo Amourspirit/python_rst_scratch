@@ -137,21 +137,27 @@
     "cSpell.words": [
         "autonamedtuple",
         "autoprotocol",
+        "copybutton",
         "epub",
         "extlinks",
         "genindex",
         "htmlzip",
         "intersphinx",
+        "linenos",
         "linkcode",
         "maxdepth",
         "modindex",
         "numfig",
+        "pyproject",
         "quickstart",
         "sphinxcontrib",
+        "titlesonly",
         "toctree",
         "todos",
         "typehints",
         "typevars",
-        "viewcode"
+        "venv",
+        "viewcode",
+        "virtualenvs"
     ]
 }

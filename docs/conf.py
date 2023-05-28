@@ -39,6 +39,7 @@ extensions = [
     "sphinx_tabs.tabs",
     "sphinx_design",
     "sphinxcontrib.spelling",
+    "sphinx_copybutton",
 ]
 
 # "sphinx.ext.linkcode",
@@ -137,6 +138,12 @@ autodoc_typehints_format = "short"
 # sphinx includes s5defs.txt that has baked in roles but must be included.
 # style_custom.css contains the colors that match these roles
 # https://stackoverflow.com/questions/3702865/sphinx-restructuredtext-set-color-for-a-single-word/60991308#60991308
+
+# https://pypi.org/project/sphinx-copybutton/
+# copybutton_exclude = '.linenos, .gp, .go'
+copybutton_prompt_text = r">>> ?|\.\.\. ?|\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
+
 
 rst_prolog_lst = [
     ".. include:: <s5defs.txt>",
