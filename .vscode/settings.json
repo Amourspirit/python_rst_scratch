@@ -133,5 +133,23 @@
             "format": "svg",
             "overrides": "config"
         }
+    ],
+    "cSpell.words": [
+        "autonamedtuple",
+        "autoprotocol",
+        "extlinks",
+        "genindex",
+        "intersphinx",
+        "linkcode",
+        "maxdepth",
+        "modindex",
+        "numfig",
+        "quickstart",
+        "sphinxcontrib",
+        "toctree",
+        "todos",
+        "typehints",
+        "typevars",
+        "viewcode"
     ]
 }

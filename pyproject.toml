@@ -30,11 +30,18 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-sphinx-toolbox = ">=3.2.0"
+python = "^3.9"
+sphinx-toolbox = ">=3.4.0"
 sphinx-tabs = ">=3.4.1"
 sphinx-rtd-dark-mode = ">=1.2.4"
-sphinx-autodoc-typehints = ">=1.19.4"
-sphinxcontrib-spelling = ">=7.6.2"
-sphinx_design = ">=0.3.0"
-esbonio = ">=0.15.0"
+sphinx-autodoc-typehints = ">=1.23.0"
+sphinxcontrib-spelling = ">=8.0.0"
+esbonio = ">=0.16.1"
+sphinx-design = "^0.4.1"
+sphinx = "^6.2.1"
+
+[tool.ruff]
+extended-select=["ANN", "C4", "N", "SIM", "TCH"]
+ignore=[]
+show-fixes=true
+target="py39"
