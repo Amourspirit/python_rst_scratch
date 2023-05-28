@@ -5,3 +5,4 @@ sphinx-toolbox==3.4.0
 sphinx_design==0.4.1
 typing_extensions==4.6.2
 sphinxcontrib-spelling==8.0.0
+sphinx-copybutton==0.5.2

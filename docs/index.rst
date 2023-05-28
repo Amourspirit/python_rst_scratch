@@ -11,6 +11,7 @@ Welcome to RST Scratch's documentation!
    :caption: Contents:
 
    scratch/index
+   poetry/index
 
 
 Indices and tables
