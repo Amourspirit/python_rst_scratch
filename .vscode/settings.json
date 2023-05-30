@@ -133,5 +133,31 @@
             "format": "svg",
             "overrides": "config"
         }
+    ],
+    "cSpell.words": [
+        "autonamedtuple",
+        "autoprotocol",
+        "copybutton",
+        "epub",
+        "extlinks",
+        "genindex",
+        "htmlzip",
+        "intersphinx",
+        "linenos",
+        "linkcode",
+        "maxdepth",
+        "modindex",
+        "numfig",
+        "pyproject",
+        "quickstart",
+        "sphinxcontrib",
+        "titlesonly",
+        "toctree",
+        "todos",
+        "typehints",
+        "typevars",
+        "venv",
+        "viewcode",
+        "virtualenvs"
     ]
 }

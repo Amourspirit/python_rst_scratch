@@ -15,7 +15,7 @@ Colored Text
 Colored Background
 ------------------
 
-:bg_red:`Background Red`, :bg_green:`Background Green`, :bg_blue:`Background blue`, :bg_yellow:`Background yelllow`
+:bg_red:`Background Red`, :bg_green:`Background Green`, :bg_blue:`Background blue`, :bg_yellow:`Background yellow`
 :bg_light_gray:`Background Light Grey`
 
 Colored Strike Through
