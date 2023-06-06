@@ -12,6 +12,7 @@ Welcome to RST Scratch's documentation!
 
    scratch/index
    poetry/index
+   guide/index
 
 
 Indices and tables

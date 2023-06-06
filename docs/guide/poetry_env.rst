@@ -1,3 +1,5 @@
+.. _guide_configure_poetry:
+
 Configure a Poetry environment
 ==============================
 

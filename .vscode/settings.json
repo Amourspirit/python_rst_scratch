@@ -5,6 +5,7 @@
         "editor.formatOnSaveMode": "file",
         "editor.formatOnSave": true
     },
+    "python.languageServer": "Pylance",
     "python.defaultInterpreterPath": "${workspaceRoot}/.venv/Scripts/python",
     "autoDocstring.docstringFormat": "google",
     "workbench.colorCustomizations": {
@@ -137,9 +138,12 @@
     "cSpell.words": [
         "autonamedtuple",
         "autoprotocol",
+        "backlinks",
         "copybutton",
+        "cssclass",
         "epub",
         "extlinks",
+        "figclass",
         "genindex",
         "htmlzip",
         "intersphinx",
@@ -148,6 +152,7 @@
         "maxdepth",
         "modindex",
         "numfig",
+        "numref",
         "pyproject",
         "quickstart",
         "sphinxcontrib",
@@ -159,5 +164,6 @@
         "venv",
         "viewcode",
         "virtualenvs"
-    ]
+    ],
+    "iis.configDir": ""
 }
