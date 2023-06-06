@@ -27,6 +27,12 @@ the version of Python shipped with LibreOffice.
 
 See :ref:`guide_configure_poetry` for poetry installation instructions.
 
+.. note::
+
+    This guide assumes you have already installed LibreOffice.
+
+    Anywhere you see ``<username>`` it needs to be replaced with your Windows username.
+
 Installing pyenv
 ----------------
 
@@ -63,6 +69,40 @@ Install the ``3.8.10`` version of Python:
 
 pyenv_ will download and install the Python version.
 The installation path will be something like: ``C:\Users\<username>\.pyenv\pyenv-win\versions\3.8.10``
+
+Creating a virtual environment
+------------------------------
+
+Now that we have a compatible version of Python installed, we can create a virtual environment.
+For the purpose of this guide, we will create a virtual environment in the ``D:\tmp\project`` directory.
+
+.. code-block:: powershell
+
+    cd D:\tmp\project
+
+Create the virtual environment with the ``3.8.10`` version of Python:
+
+.. code-block:: powershell
+
+    &"C:\Users\<username>\.pyenv\pyenv-win\versions\3.8.10\python.exe" -m venv --without-pip .venv
+
+.. note::
+
+    The ``--without-pip`` option is used because we will be using Poetry_ to manage the packages. And pip_ is not needed.
+    If you need pip_ for some reason then you can omit the ``--without-pip`` option.
+
+Activate the virtual environment:
+
+.. code-block:: powershell
+
+    .\.venv\Scripts\Activate.ps1
+
+Check the version of Python:
+
+.. code-block:: powershell
+
+    (.venv) PS D:\tmp\project> python --version
+    Python 3.8.10
 
 Initialize poetry project
 -------------------------
@@ -109,36 +149,6 @@ The generated ``pyproject.toml`` file will look something like:
     requires = ["poetry-core"]
     build-backend = "poetry.core.masonry.api"
 
-
-Creating a virtual environment
-------------------------------
-
-Now that we have a compatible version of Python installed, we can create a virtual environment.
-For the purpose of this guide, we will create a virtual environment in the ``D:\tmp\project`` directory.
-
-.. code-block:: powershell
-
-    cd D:\tmp\project
-
-Create the virtual environment with the ``3.8.10`` version of Python:
-
-.. code-block:: powershell
-
-    &"C:\Users\<username>\.pyenv\pyenv-win\versions\3.8.10\python.exe" -m venv .venv
-
-Activate the virtual environment:
-
-.. code-block:: powershell
-
-    .\.venv\Scripts\Activate.ps1
-
-Check the version of Python:
-
-.. code-block:: powershell
-
-    (.venv) PS D:\tmp\project> python --version
-    Python 3.8.10
-
 Install OOOENV
 --------------
 
@@ -148,13 +158,18 @@ Install oooenv_ in the virtual environment:
 
 .. code-block:: powershell
 
-    python -m pip install oooenv
+    poetry add oooenv --group=dev
+
+.. note::
+
+    The ``--group=dev`` option is used because we only need oooenv_ for development purposes.
+    This option instructs Poetry_ to only add oooenv_ to the ``dev-dependencies`` section of the ``pyproject.toml`` file.
 
 Do a version check to make sure it is installed:
 
 .. code-block:: powershell
 
-    (.venv) PS D:\tmp\project> python -m oooenv --version
+    (.venv) PS D:\tmp\project> oooenv --version
     0.2.0
 
 Toggle Environment
@@ -287,6 +302,17 @@ The result can be seen in :numref:`1cfcc990-9a1a-4117-964f-5df325dc437a`
 
         Calc Hello World
 
+Recommended Python Packages
+---------------------------
+
+- ooo-dev-tools_ is a Python package that provides a framework to help with development of LibreOffice python projects. See |odev_docs|_.
+- types-scriptforge_ is a Python package that provides type hints for the ScriptForge_ library.
+- types-unopy_ is a Python package the has typings for the full LibreOffice API
+
+.. note::
+
+    Both ooo-dev-tools_ and types-scriptforge_ install the types-unopy_ package.
+
 Related Links
 -------------
 
@@ -297,3 +323,9 @@ Related Links
 .. _pyenv: https://github.com/pyenv-win/pyenv-win
 .. _pip: https://pip.pypa.io/en/stable/
 .. _oooenv: https://pypi.org/project/oooenv/
+.. _ooo-dev-tools: https://pypi.org/project/ooo-dev-tools/
+.. |odev_docs| replace:: OooDev Docs
+.. _odev_docs: https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html
+.. _types-scriptforge: https://pypi.org/project/types-scriptforge/
+.. _scriptforge: https://gitlab.com/LibreOfficiant/scriptforge
+.. _types-unopy: https://pypi.org/project/types-unopy/

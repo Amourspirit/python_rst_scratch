@@ -24,6 +24,10 @@ The APSO extension is found on `LibreOffice Extensions <https://extensions.libre
 
         APSO Extension
 
+.. note::
+
+    This guide assumes you have already installed LibreOffice.
+
 Download
 --------
 

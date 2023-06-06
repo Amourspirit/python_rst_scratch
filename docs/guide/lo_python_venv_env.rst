@@ -19,44 +19,36 @@ With all the advantages of source control, testing and debugging. Tools such as 
 Also the python code can be run in the IDE without the need to start LibreOffice manually.
 There are numerous other advantages of using a Virtual Environment and an IDE for development, but this is not the focus of this guide.
 
-With packages such as types-scriptforge_ working on a `ScripForge` project can be done in the IDE as well with type checking and auto completion.
+With packages such as ooo-dev_tools_ ("OooDev") and types-scriptforge_ it is possible to develop LibreOffice python macros in a full blown IDE if type checking and auto completion is desired.
 
 This guide assumes you have a reasonable exposure to Python as well as you have some familiarity with LibreOffice application suite.
 It contains some Python code samples that are meant to be run in the LibreOffice Python environment.
-
 
 Creating a LibreOffice Python Virtual Environment is different on other operating systems.
 
 Windows
 -------
 
-:ref:`guide_windows_manual_venv` is a guide on how to create a LibreOffice Python Virtual Environment on Windows manually.
+Guides
+^^^^^^
 
-The basic steps to create a LibreOffice Python Virtual Environment on Windows are:
+See the following Guides:
 
-1. Find out the version of python for LibreOffice you are using.
-2. Install the same version of python on your system using tools such as pyenv-win_.
-3. Activate the matching python version installed with pyenv-win_.
-4. Create a virtual environment for you project using ``python -m venv`` or Poetry_.
-5. Set the virtual environment to use the LibreOffice python installation with tools such as oooenv_.
-
-OR
-
-Alternatively use |pre_cfg|_.
-
-Matching Python Version and LibreOffice Python Version is crucial when using package the have binary dependencies.
+- :ref:`guide_windows_manual_venv`
+- :ref:`guide_windows_poetry_venv`
+- :ref:`guide_lo_pip_windows_install`
+- :ref:`guide_lo_portable_pip_windows_install`
+- :ref:`guide_pip_via_zaz_pip`
+- :ref:`guide_zaz_pip_installation`
 
 Pre-Configured Virtual Environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Starting with the most simple way to get a LibreOffice Python Virtual Environment on Windows.
-There are pre-configured virtual environments available for download at |pre_cfg|_.
-
+There are also pre-configured virtual environments available for download at |pre_cfg|_.
 These virtual environments are created for usage with pip_.
-
 Follow the instruction on the |pre_cfg|_ page to download and install the virtual environment.
 
-A simplified version of the instructions is:
+Short version of the instructions:
 
 1. Create a directory for your project.
 2. Download the virtual environment zip that matches your LibreOffice python version into your project folder.
@@ -65,24 +57,6 @@ A simplified version of the instructions is:
 5. Update pip_ ``pip install --upgrade pip``
 6. Update oooenv_ ``pip install --upgrade oooenv``
 7. Run ``oooenv update --update`` to update the virtual environment to the current version of LibreOffice python.
-
-Manually Creating a Virtual Environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-As mentioned above the basic steps to create a LibreOffice Python Virtual Environment manually are more complex.
-This has much to do with the fact that LibreOffice Python is not a standard python installation it is an embedded python.
-
-1. Finding out the version of python for LibreOffice you are using.
-
-.. code-block:: powershell
-
-    &"C:\Program Files\LibreOffice\program\python.exe" --version
-
-Gets a result something like: ``Python 3.8.16``
-
-2. Install the same version of python on your system using tools such as pyenv-win_.
-
-This is out of scope for this guide, but there are many resources on the internet on how to do this.
 
 
 .. _types-scriptforge: https://pypi.org/project/types-scriptforge/
@@ -93,3 +67,4 @@ This is out of scope for this guide, but there are many resources on the interne
 
 .. |pre_cfg| replace:: Pre-configured virtual environments for LibreOffice on Windows
 .. _pre_cfg: https://github.com/Amourspirit/lo-support_file/tree/main/virtual_environments/windows
+.. _ooo-dev_tools: https://pypi.org/project/ooo-dev-tools/

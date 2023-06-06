@@ -138,6 +138,17 @@ The resulting document should look like :numref:`b370cae2-a6f6-41b7-9dfb-be6e451
 
         LibreOffice Writer Hello World
 
+Recommended Python Packages
+---------------------------
+
+- ooo-dev-tools_ is a Python package that provides a framework to help with development of LibreOffice python projects. See |odev_docs|_.
+- types-scriptforge_ is a Python package that provides type hints for the ScriptForge_ library.
+- types-unopy_ is a Python package the has typings for the full LibreOffice API
+
+.. note::
+
+    Both ooo-dev-tools_ and types-scriptforge_ install the types-unopy_ package.
+
 Related Links
 -------------
 
@@ -153,3 +164,9 @@ Related Links
 
 .. |win_pre_venv| replace:: Pre-configured virtual environments for Windows
 .. _win_pre_venv: https://github.com/Amourspirit/lo-support_file/tree/main/virtual_environments/windows
+
+.. |odev_docs| replace:: OooDev Docs
+.. _odev_docs: https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html
+.. _types-scriptforge: https://pypi.org/project/types-scriptforge/
+.. _scriptforge: https://gitlab.com/LibreOfficiant/scriptforge
+.. _types-unopy: https://pypi.org/project/types-unopy/

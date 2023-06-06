@@ -16,6 +16,11 @@ See :ref:`guide_zaz_pip_installation`.
 
 The steps below are the same for portable LibreOffice. See also :ref:`guide_lo_portable_pip_windows_install`.
 
+.. note::
+
+    This guide assumes you have already installed LibreOffice.
+
+    Anywhere you see ``<username>`` it needs to be replaced with your Windows username.
 
 Install Pip
 -----------
@@ -47,7 +52,7 @@ Click Install PIP and Yes.
         Install PIP
 
 You may see an warning messages about not being on path as seen in :numref:`54c5c501-6533-4829-bae8-5029efdaf65f`. These message can be ignored.
-Pip actually is installed at ``C:\Users\bigby\AppData\Roaming\Python\Python38\site-packages``, where ``bigby`` will be your username.
+Pip actually is installed at ``C:\Users\<username>\AppData\Roaming\Python\Python38\site-packages``, where ``<username>`` will be your Windows username.
 
 .. cssclass:: screen_shot
 

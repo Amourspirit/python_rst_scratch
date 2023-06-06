@@ -8,3 +8,4 @@ Guides
     :glob:
 
     *
+    virtual_env/index

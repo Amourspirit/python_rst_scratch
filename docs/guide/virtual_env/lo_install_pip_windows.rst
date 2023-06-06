@@ -15,6 +15,14 @@ Install pip_ into LibreOffice on Windows allows you to install python packages a
 
 The process is essentially to install pip and then use it to install other python packages.
 
+Sometimes you may want to install in a isolated virtual environment. In this case see :ref:`guide_windows_manual_venv`.
+
+.. note::
+
+    This guide assumes you have already installed LibreOffice.
+
+    Anywhere you see ``<username>`` it needs to be replaced with your Windows username.
+
 Install pip
 -----------
 
@@ -47,7 +55,7 @@ You may get a warning that the pip install location is not on that path. This wa
     Collecting pip
     Using cached pip-23.1.2-py3-none-any.whl (2.1 MB)
     Installing collected packages: pip
-    WARNING: The scripts pip.exe, pip3.8.exe and pip3.exe are installed in 'C:\Users\bigby\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+    WARNING: The scripts pip.exe, pip3.8.exe and pip3.exe are installed in 'C:\Users\<username>\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
     Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
     Successfully installed pip-23.1.2
 
@@ -61,7 +69,7 @@ Check pip version. A successful version check shows that ``pip`` is indeed on a 
 .. code-block:: powershell
 
     >.\python.exe -m pip --version
-    pip 23.1.2 from C:\Users\bigby\AppData\Roaming\Python\Python38\site-packages\pip (python 3.8)
+    pip 23.1.2 from C:\Users\<username>\AppData\Roaming\Python\Python38\site-packages\pip (python 3.8)
     [C:\Program Files\LibreOffice\program\]
 
 Install a python package.
@@ -134,6 +142,17 @@ The resulting document should look like :numref:`b370cae2-a6f6-41b7-9dfb-be6e451
 
         LibreOffice Writer Hello World
 
+Recommended Python Packages
+---------------------------
+
+- ooo-dev-tools_ is a Python package that provides a framework to help with development of LibreOffice python projects. See |odev_docs|_.
+- types-scriptforge_ is a Python package that provides type hints for the ScriptForge_ library.
+- types-unopy_ is a Python package the has typings for the full LibreOffice API
+
+.. note::
+
+    Both ooo-dev-tools_ and types-scriptforge_ install the types-unopy_ package.
+
 
 Related Links
 -------------
@@ -149,3 +168,9 @@ Related Links
 
 .. |win_pre_venv| replace:: Pre-configured virtual environments for Windows
 .. _win_pre_venv: https://github.com/Amourspirit/lo-support_file/tree/main/virtual_environments/windows
+
+.. |odev_docs| replace:: OooDev Docs
+.. _odev_docs: https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html
+.. _types-scriptforge: https://pypi.org/project/types-scriptforge/
+.. _scriptforge: https://gitlab.com/LibreOfficiant/scriptforge
+.. _types-unopy: https://pypi.org/project/types-unopy/

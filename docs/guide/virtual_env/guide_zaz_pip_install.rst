@@ -20,6 +20,10 @@ See :ref:`guide_lo_pip_windows_install` for more information.
 
 The Zaz-Pip LibreOffice extension is a LibreOffice extension that allows pip installation of Python packages from within LibreOffice.
 
+.. note::
+
+    This guide assumes you have already installed LibreOffice.
+
 Installation
 ------------
 
