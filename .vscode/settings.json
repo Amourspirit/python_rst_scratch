@@ -23,7 +23,7 @@
         }
     },
     "workbench.colorTheme": "Monokai",
-    "esbonio.sphinx.confDir": "${workspaceFolder}\\docs",
+    "esbonio.sphinx.confDir": "${workspaceFolder}/docs",
     "spellchecker.ignoreWordsList": [
         "LibreOffice"
     ],
