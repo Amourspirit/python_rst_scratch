@@ -20,6 +20,8 @@ Note that this guide for of an ``apt`` installed version of LibreOffice. It does
 Steps
 -----
 
+.. _guide_linux_manual_venv_get_python_path:
+
 Get LibreOffice Python Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,7 +39,7 @@ Start LibreOffice and open the APSO extension. In this case we are using Writer.
 
 Start the Python Console
 
-.. code-block:: text
+.. code-block::
 
     APSO python console [LibreOffice]
     3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0]
@@ -117,7 +119,7 @@ Now the virtual environment is configured to use ``uno.py`` and ``unohelper.py``
 Test installed package
 ----------------------
 
-First we will install ooo-dev-tools_
+First we will install ooo-dev-tools_.
 
 .. code-block:: bash
 
@@ -131,7 +133,6 @@ This simple script starts python, Loads LibreOffice Writer, and writes ``Hello W
 
 .. code-block:: python
 
-    $ python
     Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0] on linux
     Type "help", "copyright", "credits" or "license" for more information.
     >>> from ooodev.utils.lo import Lo
@@ -158,5 +159,11 @@ The resulting document should look like this:
     :align: center
     :class: screen_shot
 
+Related Links
+-------------
+
+- :ref:`guide_linux_poetry_venv`
+- :ref:`guide_apso_installation`
 
 .. _oooenv: https://pypi.org/project/oooenv/
+.. _ooo-dev-tools: https://pypi.org/project/ooo-dev-tools/
