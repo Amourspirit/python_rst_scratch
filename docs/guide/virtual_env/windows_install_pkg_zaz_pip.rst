@@ -11,6 +11,7 @@ Install Pip Package via Zaz-Pip
 Overview
 --------
 
+Although pip_ can be installed into Windows LibreOffice manually, see :ref:`guide_lo_pip_windows_install`.
 It is possible to pip install in LibreOffice using an extension.
 See :ref:`guide_zaz_pip_installation`.
 
@@ -154,3 +155,4 @@ Related Links
 - :ref:`guide_lo_portable_pip_windows_install`
 
 .. _ooo-dev-tools: https://pypi.org/project/ooo-dev-tools/
+.. _pip: https://pip.pypa.io/en/stable/
