@@ -280,6 +280,7 @@ Related Links
 -------------
 
 - :ref:`guide_linux_poetry_venv`
+- :ref:`guide_lo_pip_linux_install`
 - :ref:`guide_apso_installation`
 
 .. _oooenv: https://pypi.org/project/oooenv/

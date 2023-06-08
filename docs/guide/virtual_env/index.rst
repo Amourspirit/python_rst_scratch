@@ -1,10 +1,34 @@
-.. _guides_virual_environments:
+.. _guides_virtual_environments:
 
-Virtual Environments
-====================
+Pip & Virtual Environments
+==========================
+
+Covered here are the basics of installing packages with pip and creating virtual environments.
 
 .. toctree::
     :titlesonly:
-    :glob:
+    :caption: Common
 
-    *
+    poetry_env
+    guide_zaz_pip_install
+
+.. toctree::
+    :titlesonly:
+    :caption: Linux
+
+    linux_lo_install_pip
+    linux_install_pkg_zaz_pip
+    linux_manual_venv
+    linux_manual_venv_snap
+    linux_poetry_env
+
+
+.. toctree::
+    :titlesonly:
+    :caption: Windows
+
+    windows_lo_install_pip
+    windows_install_pkg_zaz_pip
+    windows_manual_venv
+    windows_poetry_env
+    windows_portable_install_pip

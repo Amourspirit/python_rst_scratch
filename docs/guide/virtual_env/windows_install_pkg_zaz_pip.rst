@@ -1,7 +1,7 @@
 .. _guide_pip_via_zaz_pip:
 
-Install Pip Package via Zaz-Pip
-===============================
+Windows - Install Pip Package via Zaz-Pip
+=========================================
 
 .. contents:: Table of Contents
     :local:

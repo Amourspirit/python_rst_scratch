@@ -19,30 +19,17 @@ With all the advantages of source control, testing and debugging. Tools such as 
 Also the python code can be run in the IDE without the need to start LibreOffice manually.
 There are numerous other advantages of using a Virtual Environment and an IDE for development, but this is not the focus of this guide.
 
-With packages such as ooo-dev_tools_ ("OooDev") and types-scriptforge_ it is possible to develop LibreOffice python macros in a full blown IDE if type checking and auto completion is desired.
+With packages such as ooo-dev_tools_ (|odev|_) and types-scriptforge_ it is possible to develop LibreOffice python macros in a full blown IDE if type checking and auto completion is desired.
 
 This guide assumes you have a reasonable exposure to Python as well as you have some familiarity with LibreOffice application suite.
 It contains some Python code samples that are meant to be run in the LibreOffice Python environment.
 
 Creating a LibreOffice Python Virtual Environment is different on other operating systems.
 
-Windows
--------
+See :ref:`guides_virtual_environments`.
 
-Guides
-^^^^^^
-
-See the following Guides:
-
-- :ref:`guide_windows_manual_venv`
-- :ref:`guide_windows_poetry_venv`
-- :ref:`guide_lo_pip_windows_install`
-- :ref:`guide_lo_portable_pip_windows_install`
-- :ref:`guide_pip_via_zaz_pip`
-- :ref:`guide_zaz_pip_installation`
-
-Pre-Configured Virtual Environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Windows - Pre-Configured Virtual Environments
+---------------------------------------------
 
 There are also pre-configured virtual environments available for download at |pre_cfg|_.
 These virtual environments are created for usage with pip_.
