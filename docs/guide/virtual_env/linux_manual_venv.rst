@@ -16,6 +16,17 @@ This means LibreOffice on Linux has access to full python.
 
 
 Note that this guide for of an ``apt`` installed version of LibreOffice. It does not cover the Flatpak version or the Snap version.
+See: :ref:`guide_linux_manual_venv_snap`.
+
+Prerequisites
+-------------
+
+The ``libreoffice-script-provider-python`` apt package must be installed. This package allows scripts to connect to LibreOffice.
+On Windows this in not needed because LibreOffice embeds Python. However, on Linux LibreOffice requires it Even for Snaps.
+
+.. code-block:: bash
+
+    sudo apt install libreoffice-script-provider-python
 
 Steps
 -----
