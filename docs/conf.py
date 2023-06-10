@@ -155,6 +155,7 @@ rst_prolog_lst = [
 # unlike the colors style_custom.css, these colors can be change by
 # changing colors css vars that start with -t-color-
 rst_prolog = ""
+
 if html_theme == "sphinx_rtd_theme":
     with open("roles/theme_color_roles.txt", "r") as file:
         rst_prolog += file.read()
@@ -165,6 +166,26 @@ with open("roles/custom_roles.txt", "r") as file:
     rst_prolog += "\n"
 
 
+rst_prolog += "\n" + "\n".join(rst_prolog_lst)
+
+rst_prolog_lst = [
+    ".. include:: <s5defs.txt>",
+    "",
+    ".. role:: event(doc)",
+    "",
+    ".. role:: eventref(ref)",
+    "",
+    ".. |app_name| replace:: OOO Development Tools",
+    "",
+    ".. |app_name_bold| replace:: **OOO Development Tools**",
+    "",
+    ".. |odev| replace:: OooDev",
+    ".. _odev: https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html",
+    "",
+    ".. |ooouno| replace:: ooouno library",
+    ".. _ooouno: https://pypi.org/project/ooouno/",
+    "",
+]
 rst_prolog += "\n" + "\n".join(rst_prolog_lst)
 
 # set if figures can be referenced as numbers. Default is False

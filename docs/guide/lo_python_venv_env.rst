@@ -40,7 +40,7 @@ Short version of the instructions:
 1. Create a directory for your project.
 2. Download the virtual environment zip that matches your LibreOffice python version into your project folder.
 3. Extract the zip into the project folder ( extracted to ``.venv`` ).
-4. Activate the virtual environment by running ``.\.venv\Scripts\activate.ps1`` (PowerShell).
+4. Activate the virtual environment, eg in PowerShell run ``.\.venv\Scripts\activate.ps1``.
 5. Update pip_ ``pip install --upgrade pip``
 6. Update oooenv_ ``pip install --upgrade oooenv``
 7. Run ``oooenv update --update`` to update the virtual environment to the current version of LibreOffice python.
