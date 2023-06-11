@@ -19,9 +19,10 @@ Covered here are the basics of installing packages with pip and creating virtual
     linux_lo_install_pip
     linux_install_pkg_zaz_pip
     linux_manual_venv
-    linux_manual_venv_snap
     linux_poetry_env
-    linux_lo_install_pip_flatpak
+    linux_manual_venv_snap
+    linux_flatpak_lo_pip
+    linux_flatpak_automate_lo
 
 
 .. toctree::

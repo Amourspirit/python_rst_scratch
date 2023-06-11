@@ -1,7 +1,7 @@
 .. _guide_linux_manual_venv_snap:
 
-Linux - Manually Creating a Virtual Environment for Snap
-========================================================
+Linux - Manually Creating a Virtual Environment for LibreOffice Snap
+====================================================================
 
 .. contents:: Table of Contents
     :local:

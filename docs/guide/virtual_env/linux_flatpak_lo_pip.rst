@@ -1,4 +1,4 @@
-.. _guide_lo_pip_linux_flatpak:
+.. _guide_linux_flatpak_lo_pip:
 
 Linux - Install pip packages into LibreOffice FlatPak
 =====================================================
@@ -191,18 +191,18 @@ Notes on PYTHONPATH
 
 If you need to add more then a single path use ``:`` to separate the paths.
 
-In  some cases ``PYTHONPATH`` does not work correctly when a part of the path has a directory that start with ``.`` such as ``/home/user_name/.local/lib/python3.10``.
+In  some cases ``PYTHONPATH`` does not work correctly when a part of the path has a directory that start with ``.`` such as ``/home/guide/.local/lib/python3.10``.
 One work around for this issue is to create a system link to a path that does not contain the ``.local`` part of the path.
 
 .. code-block:: bash
 
-    ln -s /home/user_name/.local/lib/python3.10 /home/user_name/local/lib/python3.10
+    ln -s /home/guide/.local/lib/python3.10 /home/guide/local/lib/python3.10
 
 Now ``PYTHONPATH`` can be set like so:
 
 .. code-block:: ini
 
-    PYTHONPATH=/home/user_name/local/lib/python3.10
+    PYTHONPATH=/home/guide/local/lib/python3.10
 
 or
 
@@ -339,25 +339,24 @@ Run the follow code
     APSO python console [LibreOffice]
     3.10.11 (main, Nov 10 2011, 15:00:00) [GCC 12.2.0]
     Type "help", "copyright", "credits" or "license" for more information.
-    >>> from ooodev.utils.lo import Lo
     >>> from ooodev.office.write import Write
-    >>> from ooodev.utils.gui import GUI
     >>> def say_hello():
     ...     cursor = Write.get_cursor(Write.active_doc)
     ...     Write.append_para(cursor=cursor, text="Hello World!")
     ...
     >>> say_hello()
-    >>> 
+    >>>
 
 When ``say_hello()`` is called ``Hello World!`` is automatically written into the document.
 
-.. image:: https://github.com/Amourspirit/python_ooo_dev_tools/assets/4193389/21ecb6ef-bf88-4074-8254-303c6d0dd886
-    :alt: LibreOffice Flatpak APSO Extension
+.. image:: https://github.com/Amourspirit/python_ooo_dev_tools/assets/4193389/8e3f1fcc-1a19-4189-b228-4b94d106b426
+    :alt: LibreOffice Flatpak APSO Say Hello
     :align: center
 
 Related Links
 -------------
 
+- :ref:`guide_linux_flatpak_automate_libreoffice`
 - :ref:`guide_linux_manual_venv_snap`
 - :ref:`guide_linux_manual_venv`
 
