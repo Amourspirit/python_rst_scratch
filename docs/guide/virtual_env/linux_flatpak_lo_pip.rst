@@ -28,8 +28,11 @@ Get Python version
 ^^^^^^^^^^^^^^^^^^
 
 To start, we need to get the major and minor version of Python from LibreOffice.
+Perhaps the easiest way is to use the APSO extension for LibreOffice.
+At the time this guide was written, |lo_flatpak|_ does not come with APSO installed.
+See :ref:`guide_apso_installation` for more information on how to install in a flatpak version.
 
-The FlatPak version of LibreOffice comes with APSO extension already installed.
+
 Start FlatPak LibreOffice and open the APSO extension. In this case we are using Writer.
 
 ``Tools -> Macros -> Organize python scripts``
