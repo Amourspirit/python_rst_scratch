@@ -4,14 +4,14 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "rst-scratch"
-version = "0.1.1"
+version = "0.1.2"
 description = "Restructured Text Scratch Editor"
 license = "MIT"
 readme = "README.md"
 authors = [
     ":Barry-Thomas-Paul: Moss <bigbytetech@gmail.com>"
 ]
-keywords = ["rst", "restruecturedtext", "scratch"]
+keywords = ["rst", "restructuredtext", "scratch"]
 homepage = "https://github.com/Amourspirit/python_rst_scratch"
 documentation = "https://github.com/Amourspirit/python_rst_scratch"
 repository = "https://github.com/Amourspirit/python_rst_scratch"
@@ -22,8 +22,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",

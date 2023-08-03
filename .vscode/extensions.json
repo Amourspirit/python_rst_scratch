@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "lextudio.restructuredtext",
+        "trond-snekvik.simple-rst",
+        "fabiospampinato.vscode-todo-plus",
+        "njpwerner.autodocstring",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
