@@ -5,7 +5,7 @@
         "editor.formatOnSaveMode": "file",
         "editor.formatOnSave": true
     },
-    "python.defaultInterpreterPath": "${workspaceRoot}/.venv/Scripts/python",
+    "python.defaultInterpreterPath": "${workspaceRoot}/.venv/bin/python3",
     "autoDocstring.docstringFormat": "google",
     "workbench.colorCustomizations": {
         "[Monokai]": {
@@ -22,7 +22,7 @@
         }
     },
     "workbench.colorTheme": "Monokai",
-    "esbonio.sphinx.confDir": "${workspaceFolder}\\docs",
+    "esbonio.sphinx.confDir": "${workspaceFolder}/docs",
     "spellchecker.ignoreWordsList": [
         "LibreOffice"
     ],
